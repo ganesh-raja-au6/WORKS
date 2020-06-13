@@ -65,7 +65,8 @@ exports.Login = async(async (req, res) => {
         return res.status(403).json({ error: "Invalid email or password." });
       } else {
         const token = await sign({_id : emailMatched._id}, process.env.JWTSECRET, {expiresIn : 60 * 60})
-        return res.status(200).json({ message: "Logged in successfully.", token });
+        const {_id, email, username} = emailMatched
+        return res.status(200).json({ message: "Logged in successfully.", token, _id, email, username });
       }
     }
   }

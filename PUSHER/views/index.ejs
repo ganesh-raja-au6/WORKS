@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Votes</h2>
+      <form action="/poll" method="POST">
+        <div class="form-group">
+          <input type="radio" name="os" id="windows">
+          <label for="windows">Windows</label>
+        </div>
+        <div class="form-group">
+          <input type="radio" name="os" id="mac">
+          <label for="mac">Mac</label>
+        </div>
+        <div class="form-group">
+          <input type="radio" name="os" id="linux">
+          <label for="linux">Linux</label>
+        </div>
+        <div class="form-group">
+          <input type="radio" name="os" id="other">
+          <label for="other">Other Os</label>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Vote" class="btn btn-success">
+        </div>
+      </form>
+      <br><br>
+      <div id="chartContainer" style="width: 100%; height: 300px;"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/5.0.2/pusher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodemailer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form class="mt-5" method="POST">
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <textarea name="desc" id="desc" rows="5" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Mail" class="btn btn-block btn-info">
+            </div>
+        </form>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        // document.querySelector('form').addEventListener('submit', (e) => {
+        //     e.preventDefault()
+        //     const [email, title, desc] = [document.querySelector('#email'), document.querySelector('#title'), document.querySelector('#desc')]
+        //     const data = {
+        //         email, title, desc
+        //     }
+        //     $('/email', data, ()=>{
+        //         console.log('Email sent success')
+        //     })
+        // })
+        $('form').on('submit', (e)=>{
+            e.preventDefault()
+            const email = $('#email').val()
+            const title = $('#title').val()
+            const desc = $('#desc').val()
+            const data = {
+                email, title, desc
+            }
+            $('/email', data, ()=>{
+                console.log('Email sent success')
+            })
+        })
+    </script>
+</body>
+</html>

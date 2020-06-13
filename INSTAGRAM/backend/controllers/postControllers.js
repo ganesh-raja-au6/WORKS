@@ -8,20 +8,21 @@ const Post = require(path.join(__dirname, "..", "models", "posts"));
 const {async} = require(path.join(__dirname, "..", 'middlewares', 'asyncHandler'));
 
 exports.posts = async(async (req, res, next) => {
-    const {title, body} = req.body
-    if(!title || !body){
+    const {title, body, file} = req.body
+    if(!title || !body || !file){
         return res.status(422).json({error : "Please fill all the fields."})
     }else{
         const schema = Joi.object({
             title : Joi.string().max(30),
-            body : Joi.string().max(150)
+            body : Joi.string().max(150),
+            file : Joi.string().required()
         })
-        const { error } = schema.validate({title, body})
+        const { error } = schema.validate({title, body, file})
         if(error){
             return res.status(400).json({error : error.message})
         }else{
             req.user.password = undefined
-            const post = new Post({title, body, user : req.user})
+            const post = new Post({title, body, file,  user : req.user})
             const result = await post.save()
             return res.status(200).json({message : result})
         }

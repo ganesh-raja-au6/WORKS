@@ -21,9 +21,9 @@ mongoose
 const app = express();
 
 // Configure middlewareOptions
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended : true}))
-app.use(cors())
 
 // middleware routes
 app.use('/api/v1/auth', require(path.join(__dirname, 'routes', 'authRoutes')))

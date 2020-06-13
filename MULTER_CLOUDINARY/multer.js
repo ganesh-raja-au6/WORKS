@@ -40,3 +40,30 @@ let checktype = (file, cb) => {
 };
 
 module.exports = upload;
+
+
+
+
+let query;
+  let reqQuery = { ...req.query };
+  const removeFields = ["select", "sort", "limit", "page"];
+  // filtering through query params using mongoose bitwise operators
+  removeFields.forEach(params => delete reqQuery[params]);
+  let queryString = JSON.stringify(reqQuery);
+  queryString = queryString.replace(
+    /\b(gt|gte|lt|lte|in)\b/,
+    match => `$${match}`
+  );
+  query = BusinessList.find(JSON.parse(queryString)).populate("services");
+  // Filtering through query params using select
+  if (req.query.select) {
+    let fields = req.query.select.split(",").join(" ");
+    query = query.select(fields);
+  }
+  // Filtering through query params using select
+  if (req.query.sort) {
+    let fields = req.query.sort.split(",").join(" ");
+    query = query.sort(fields);
+  } else {
+    query = query.sort("-createdAt");
+  }

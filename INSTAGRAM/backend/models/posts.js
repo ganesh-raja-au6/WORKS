@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
         required : true
     },image : {
         type : String,
-        default : 'No Image'
+        required: true
     },user : {
         type : mongoose.Types.ObjectId,
         ref : 'User'

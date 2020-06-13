@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+body{
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(../images/business-meeting-1238188_1920.jpg);
+}
+.top-nav{
+  background: #433166 !important;
+}
+h1{
+  color: #fff;
+  text-align: center;
+  margin-top: 350px;
+  font-size: 4em;
+}
+.logo-text{
+  font-size: 1em;
+  color: #f3b631;
+  position: relative;
+}
+.logo-text:before{
+  content: '';
+  width: 2px;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: -380px;
+  top: 0;
+  background: #fff;
+}
+.logo-text:after{
+  content: '';
+  width: 2px;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  right : -225px;
+  top: 0;
+  background: #fff;
+}
+.logo-letter{
+  color: #f3b631;
+}
+.logo-letter1{
+  color: #433166;
+}
+.logo-letter:hover{
+  color: #f3b631;
+}

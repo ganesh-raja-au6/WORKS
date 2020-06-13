@@ -1,0 +1,425 @@
+/*
+#################### Font family #####################
+Roboto font : font-family: 'Roboto', sans-serif;
+font-family: 'Black Ops One', cursive;
+*/
+
+/* Variables */
+@import url("./partials/_variables.css");
+
+/* Default Styles */
+body {
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,.9)), url('./background.jpg'); */
+  height: 100vh;
+  /* overflow: hidden; */
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar starts */
+#header-area {
+  padding-top: 20px;
+  margin-bottom: 0;
+  background: transparent !important;
+}
+#header-area .nav {
+  background: transparent !important;
+}
+#logo {
+  font-family: "Black Ops One", cursive;
+  font-size: 1.5em;
+  color: var(--primary) !important;
+}
+#header-area .active {
+  color: var(--primary) !important;
+}
+#header-area .nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: 0.5s all ease-out;
+}
+#header-area .nav-link:hover {
+  color: var(--primary) !important;
+  transition: 0.5s ease-in-out;
+}
+/* Navbar Ends */
+/* Showcase starts */
+#particles-js {
+  position: absolute;
+  top: 0;
+}
+.showcase {
+  background: url(../img/home-banner.png);
+  background-repeat: no-repeat;
+  height: 840px;
+}
+.showcase p {
+  text-align: left;
+  margin-left: 240px;
+  padding-top: 250px;
+  margin-bottom: 0;
+}
+.showcase h1 {
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  font-size: 4em;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.showcase h4 {
+    text-align: center;
+  color: var(--primary-2);
+}
+.buttons {
+  padding-top: 50px;
+  width: 350px;
+  margin : 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.showcase .btn2 {
+  border: 1px solid var(--primary);
+  color: var(--primary-2);
+  box-shadow: var(--boxshadow);
+  padding : 15px 50px;
+  transition: 0.6s all ease-in-out;
+}
+.showcase .btn2:hover {
+  background: var(--gradient);
+  color: white;
+  box-shadow: var(--boxshadow);
+  transition: 0.6s all ease-in-out;
+}
+.showcase .btn1 {
+  background: var(--gradient);
+  color: white;
+  box-shadow: var(--boxshadow);
+  padding : 15px 50px;
+  transition: 0.6s all ease-in-out;
+}
+.showcase .btn1:hover {
+  border: 1px solid var(--primary);
+  background: none;
+  color: var(--primary-2);
+  box-shadow: var(--boxshadow);
+  transition: 0.6s all ease-in-out;
+}
+/* Showcase ends */
+
+/* Scroll down animation starts */
+
+.mouse {
+  width: 52px;
+  height: 88px;
+  position: relative;
+  left : 48%;
+  margin-top: 170px;
+  /* transform: translate(-50%, -50%); */
+  background: #4458dc
+    linear-gradient(transparent 0%, transparent 50%, #854fee 50%, #854fee 100%);
+  background-size: 100% 200%;
+  border-radius: 100px;
+  animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
+}
+.mouse:before,
+.mouse:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.mouse:before {
+  width: 46px;
+  height: 82px;
+  background-color: #fff;
+  border-radius: 100px;
+}
+.mouse:after {
+  background-color: #854fee;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  animation: trackBallSlide 5s linear infinite;
+}
+.text {
+  margin-top: 50px;
+  font-family: Cabin;
+  letter-spacing: 12px;
+  color: #fff;
+  text-indent: 12px;
+  animation: colorText 5s ease-out infinite, nudgeText 5s ease-out infinite;
+}
+
+/* Animations */
+@keyframes colorSlide {
+  0% {
+    background-position: 0% 100%;
+  }
+  20% {
+    background-position: 0% 0%;
+  }
+  21% {
+    background-color: #4458dc;
+  }
+  29.99% {
+    background-color: #854fee;
+    background-position: 0% 0%;
+  }
+  30% {
+    background-color: #4458dc;
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 0% 0%;
+  }
+  51% {
+    background-color: #4458dc;
+  }
+  59% {
+    background-color: #854fee;
+    background-position: 0% 0%;
+  }
+  60% {
+    background-color: #4458dc;
+    background-position: 0% 100%;
+  }
+  80% {
+    background-position: 0% 0%;
+  }
+  81% {
+    background-color: #4458dc;
+  }
+  90%,
+  100% {
+    background-color: #854fee;
+  }
+}
+
+@keyframes colorText {
+  21% {
+    color: #4458dc;
+  }
+  30% {
+    color: #854fee;
+  }
+  51% {
+    color: #4458dc;
+  }
+  60% {
+    color: #854fee;
+  }
+  81% {
+    color: #4458dc;
+  }
+  90% {
+    color: #854fee;
+  }
+}
+
+@keyframes trackBallSlide {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+  6% {
+    opacity: 1;
+    transform: scale(0.9) translateY(5px);
+  }
+  14% {
+    opacity: 0;
+    transform: scale(0.4) translateY(40px);
+  }
+  15%,
+  19% {
+    opacity: 0;
+    transform: scale(0.4) translateY(-20px);
+  }
+  28%,
+  29.99% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+  36% {
+    opacity: 1;
+    transform: scale(0.9) translateY(5px);
+  }
+  44% {
+    opacity: 0;
+    transform: scale(0.4) translateY(40px);
+  }
+  45%,
+  49% {
+    opacity: 0;
+    transform: scale(0.4) translateY(-20px);
+  }
+  58%,
+  59.99% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.9) translateY(-20px);
+  }
+  66% {
+    opacity: 1;
+    transform: scale(0.9) translateY(5px);
+  }
+  74% {
+    opacity: 0;
+    transform: scale(0.4) translateY(40px);
+  }
+  75%,
+  79% {
+    opacity: 0;
+    transform: scale(0.4) translateY(-20px);
+  }
+  88%,
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(-20px);
+  }
+}
+@keyframes nudgeMouse {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(8px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(8px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+@keyframes nudgeText {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(2px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+/* scroll down animation ends*/
+
+/* About starts */
+#about{
+    /* background: url(../img/asfalt-dark.png); */
+    padding: 60px;
+    margin : 60px 0;
+}
+#about h2{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: bolder;
+    margin-bottom: 25px;
+    position: relative;
+}
+#about h2::before{
+    position: absolute;
+    top: 34%;
+    left: 221px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background : var(--primary);
+}
+#about h2::after{
+    position: absolute;
+    top : 18px;
+    right: 0;
+    content: '';
+    width: 300px;
+    height: 2px;
+    background : var(--primary);
+}
+#about span{
+    color: var(--primary-2);
+}
+#about p{
+    color: var(--primary);
+    font-size: .9em;
+    line-height:2;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+#about .btn{
+    margin-top: 40px;
+    background: var(--gradient);
+    color: white;
+    box-shadow: var(--boxshadow);
+    padding : 15px 50px;
+    transition: 0.6s all ease-in-out;
+}
+#about .btn:hover{
+    border: 1px solid var(--primary);
+    color: var(--primary-2);
+    background: transparent;
+    box-shadow: var(--boxshadow);
+    transition: 0.6s all ease-in-out;
+}
+#about img{
+    z-index: 1;
+    filter : grayscale(100%);
+    transition: 0.6s all ease-in-out;
+}
+#about img:hover{
+    filter: grayscale(0);
+    transition: 0.6s all ease-in-out;
+}
+#about .cross-square{
+    background : transparent;
+    width: 100px;
+    height : 100px;
+    border : 5px solid var(--primary);
+    position : absolute;
+    top: 65%;
+    left: -4%;
+    transform : rotate(45deg);
+    z-index: 2;
+    transition: 0.6s all ease-in-out;
+}
+#about img:hover ~.cross-square{
+    transform : rotate(-45deg);
+    transition: 0.6s all ease-in-out;
+}
