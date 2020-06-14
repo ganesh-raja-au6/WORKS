@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react'
-import CounterComponent from './Components/CounterComponent.jsx'
+import Counters from './Components/Counters.jsx'
 
 class App extends Component {
     render(){
         return (
             <Fragment>
-                <CounterComponent />
+                <Counters />
             </Fragment>
         )
     }
