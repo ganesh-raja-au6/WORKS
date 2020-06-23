@@ -11,7 +11,7 @@ const Sorting = ({
     <ul className="list-group">
       {genres.map((genre) => (
         <li
-          key={genre._id}
+          key={genre[valueProperty]}
           className={
             currentGenre === genre
               ? "active list-group-item"
